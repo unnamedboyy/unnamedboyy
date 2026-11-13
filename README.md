@@ -24,8 +24,8 @@
   <img src="https://user-badge.committers.top/indonesia_private/unnamedboyy.svg" />
 </p>
 
-<p align='center'> 
-   <img src="https://github.com/Alvalens/Alvalens/assets/109880628/47a90027-6911-40a2-ac4a-501d9cd3eeee"/>
+<p align="center">
+  <img src="./pixel-banner.svg" alt="Kaisar Pixel Banner" width="100%" />
 </p>
 
 ## About Me
