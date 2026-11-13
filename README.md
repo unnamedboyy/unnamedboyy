@@ -28,10 +28,6 @@
   <img src="https://raw.githubusercontent.com/unnamedboyy/unnamedboyy/main/pixel-banner.svg" alt="Kaisar Pixel Banner" />
 </p>
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/unnamedboyy/unnamedboyy/main/pixel-banner.svg" alt="Kaisar Pixel Banner" />
-</p>
-
 ## About Me
 
 I'm a **Fullstack Software Engineer** holding a Bachelor of Science in Informatics from Universitas Atma Jaya Yogyakarta, focused on building reliable software across enterprise systems, modern web applications, and robust backend architectures.
