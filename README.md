@@ -25,7 +25,7 @@
 </p>
 
 <p align="center">
-  <img src="./pixel-banner.svg" alt="Kaisar Pixel Banner" width="100%" />
+  <img src="https://raw.githubusercontent.com/unnamedboyy/unnamedboyy/main/pixel-banner.svg" alt="Kaisar Pixel Banner" />
 </p>
 
 ## About Me
