@@ -12,9 +12,9 @@
     <img src="https://img.shields.io/badge/Portfolio-GitHub-111111?style=for-the-badge&logo=github&logoColor=white" />
   </a>
   <a href="https://www.linkedin.com/in/kaisar-simatupang/">
-    <img src="https://img.shields.io/badge/LinkedIn-Alvalen%20Shafel-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+    <img src="https://img.shields.io/badge/LinkedIn-Kaisar%20Simatupang-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
-  <a href="mailto:alvalen.shafel04@gmail.com">
+  <a href="mailto:kaisar.simatupang.id@gmail.com">
     <img src="https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white" />
   </a>
 </p>
@@ -30,7 +30,7 @@
 
 ## About Me
 
-I'm a **Fullstack Software Engineer** holding a Bachelor of Science in Informatics from Universitas Atma Jaya Yogyakarta (GPA 3.76), focused on building reliable software across enterprise systems, modern web applications, and robust backend architectures.
+I'm a **Fullstack Software Engineer** holding a Bachelor of Science in Informatics from Universitas Atma Jaya Yogyakarta, focused on building reliable software across enterprise systems, modern web applications, and robust backend architectures.
 
 Currently, I have hands-on experience building enterprise tools, optimization systems, and fullstack applications ranging from corporate asset management systems to real-time scheduling platforms and e-commerce solutions.
 
@@ -142,9 +142,9 @@ Web-based catalog, ordering platform, and secondhand goods commerce ecosystems b
     <img src="https://img.shields.io/badge/GitHub-unnamedboyy-111111?style=for-the-badge&logo=github&logoColor=white" />
   </a>
   <a href="https://www.linkedin.com/in/kaisar-simatupang/">
-    <img src="https://img.shields.io/badge/LinkedIn-Alvalen%20Shafel-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+    <img src="https://img.shields.io/badge/LinkedIn-Kaisar%20Simatupang-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
   <a href="mailto:kaisar.simatupang.id@gmail.com">
-    <img src="https://img.shields.io/badge/Email-alvalen.shafel04%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" />
+    <img src="https://img.shields.io/badge/Email-kaisar.simatupang.id%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" />
   </a>
 </p>
