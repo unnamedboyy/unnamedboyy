@@ -1,0 +1,409 @@
+<svg width="840" height="220" viewBox="0 0 840 220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Pattern Background Grid LED Matriks GitHub -->
+    <pattern id="led-grid" width="14" height="14" patternUnits="userSpaceOnUse">
+      <rect x="2" y="2" width="10" height="10" rx="2" fill="#161b22" />
+    </pattern>
+
+    <!-- Efek Cahaya Glow Hijau -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Base Board -->
+  <rect width="840" height="220" rx="12" fill="#0d1117" />
+  <rect x="14" y="14" width="812" height="192" rx="6" fill="url(#led-grid)" />
+
+  <style>
+    .px-bright { fill: #39d353; }
+    .px-high   { fill: #26a641; }
+    .px-med    { fill: #006d32; }
+    .px-low    { fill: #0e4429; }
+    .px-white  { fill: #e6edf3; }
+
+    /* ================= TIMELINE 16 DETIK LOOP ================= */
+
+    /* SCENE 1: KAISAR (0% - 25%) */
+    .scene-kaisar {
+      opacity: 0;
+      transform-origin: center;
+      animation: animKaisar 16s infinite;
+    }
+    @keyframes animKaisar {
+      0%   { opacity: 0; transform: scale(0.85); }
+      3%   { opacity: 1; transform: scale(1.03); }
+      5%   { opacity: 1; transform: scale(1); }
+      10%  { opacity: 0.7; }
+      12%  { opacity: 1; }
+      21%  { opacity: 1; transform: scale(1); }
+      25%  { opacity: 0; transform: scale(1.1); }
+      100% { opacity: 0; }
+    }
+
+    /* SCENE 2: FULLSTACK MARQUEE (25% - 50%) */
+    .scene-fullstack {
+      opacity: 0;
+      animation: animFullstack 16s linear infinite;
+    }
+    @keyframes animFullstack {
+      0%, 24.9% { opacity: 0; transform: translateX(850px); }
+      26%       { opacity: 1; transform: translateX(780px); }
+      37.5%     { opacity: 1; transform: translateX(65px); }
+      48%       { opacity: 1; transform: translateX(-650px); }
+      50%, 100% { opacity: 0; transform: translateX(-750px); }
+    }
+
+    /* SCENE 3: 2 ANJING BERLARI (50% - 75%) */
+    .scene-dogs {
+      opacity: 0;
+      animation: animDogsRun 16s linear infinite;
+    }
+    @keyframes animDogsRun {
+      0%, 49.9% { opacity: 0; transform: translateX(-320px); }
+      52%       { opacity: 1; transform: translateX(-220px); }
+      73%       { opacity: 1; transform: translateX(860px); }
+      75%, 100% { opacity: 0; transform: translateX(920px); }
+    }
+
+    /* Gerakan memantul & kaki anjing */
+    .dog-1 { animation: dogBounce 0.35s infinite alternate ease-in-out; }
+    .dog-2 { animation: dogBounce 0.35s infinite alternate-reverse ease-in-out; }
+    @keyframes dogBounce {
+      0%   { transform: translateY(0px); }
+      100% { transform: translateY(-10px); }
+    }
+
+    .legs-a { animation: legToggleA 0.25s steps(1) infinite; }
+    .legs-b { animation: legToggleB 0.25s steps(1) infinite; }
+    @keyframes legToggleA {
+      0%, 49%   { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    @keyframes legToggleB {
+      0%, 49%   { opacity: 0; }
+      50%, 100% { opacity: 1; }
+    }
+
+    /* SCENE 4: SILUET SPIDER-MAN (75% - 100%) */
+    .scene-spidey {
+      opacity: 0;
+      transform-origin: center;
+      animation: animSpidey 16s infinite;
+    }
+    @keyframes animSpidey {
+      0%, 74.9% { opacity: 0; transform: translateY(20px) scale(0.9); }
+      78%       { opacity: 1; transform: translateY(0px) scale(1); }
+      95%       { opacity: 1; transform: translateY(0px) scale(1); }
+      100%      { opacity: 0; transform: translateY(-15px) scale(0.95); }
+    }
+
+    /* Mata Spider-Man menyipit / spidey sense */
+    .spidey-eyes {
+      transform-origin: 420px 110px;
+      animation: eyeSquint 2s infinite alternate ease-in-out;
+    }
+    @keyframes eyeSquint {
+      0%, 60% { transform: scaleY(1); }
+      85%, 100% { transform: scaleY(0.65); }
+    }
+  </style>
+
+  <!-- =================================================================== -->
+  <!-- SCENE 1: TULISAN PIXEL "KAISAR"                                     -->
+  <!-- =================================================================== -->
+  <g class="scene-kaisar" filter="url(#glow)" transform="translate(154, 62)">
+    <!-- K -->
+    <g transform="translate(0,0)">
+      <rect x="0" y="0" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="0" width="10" height="10" rx="2" class="px-high" />
+      <rect x="0" y="14" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="14" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="0" y="28" width="10" height="10" rx="2" class="px-bright" /><rect x="14" y="28" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="0" y="42" width="10" height="10" rx="2" class="px-bright" /><rect x="14" y="42" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="0" y="56" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="56" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="0" y="70" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="70" width="10" height="10" rx="2" class="px-high" />
+      <rect x="0" y="84" width="10" height="10" rx="2" class="px-bright" /><rect x="56" y="84" width="10" height="10" rx="2" class="px-med" />
+    </g>
+    <!-- A -->
+    <g transform="translate(84,0)">
+      <rect x="14" y="0" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="0" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="0" y="14" width="10" height="10" rx="2" class="px-high" /><rect x="42" y="14" width="10" height="10" rx="2" class="px-high" />
+      <rect x="0" y="28" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="28" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="0" y="42" width="10" height="10" rx="2" class="px-bright" /><rect x="14" y="42" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="42" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="42" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="0" y="56" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="56" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="0" y="70" width="10" height="10" rx="2" class="px-high" /><rect x="42" y="70" width="10" height="10" rx="2" class="px-high" />
+      <rect x="0" y="84" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="84" width="10" height="10" rx="2" class="px-bright" />
+    </g>
+    <!-- I -->
+    <g transform="translate(154,0)">
+      <rect x="0" y="0" width="10" height="10" rx="2" class="px-bright" /><rect x="14" y="0" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="0" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="14" y="14" width="10" height="10" rx="2" class="px-high" />
+      <rect x="14" y="28" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="14" y="42" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="14" y="56" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="14" y="70" width="10" height="10" rx="2" class="px-high" />
+      <rect x="0" y="84" width="10" height="10" rx="2" class="px-bright" /><rect x="14" y="84" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="84" width="10" height="10" rx="2" class="px-bright" />
+    </g>
+    <!-- S -->
+    <g transform="translate(210,0)">
+      <rect x="14" y="0" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="0" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="0" width="10" height="10" rx="2" class="px-high" />
+      <rect x="0" y="14" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="0" y="28" width="10" height="10" rx="2" class="px-high" />
+      <rect x="14" y="42" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="42" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="42" y="56" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="42" y="70" width="10" height="10" rx="2" class="px-high" />
+      <rect x="0" y="84" width="10" height="10" rx="2" class="px-high" /><rect x="14" y="84" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="84" width="10" height="10" rx="2" class="px-bright" />
+    </g>
+    <!-- A -->
+    <g transform="translate(280,0)">
+      <rect x="14" y="0" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="0" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="0" y="14" width="10" height="10" rx="2" class="px-high" /><rect x="42" y="14" width="10" height="10" rx="2" class="px-high" />
+      <rect x="0" y="28" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="28" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="0" y="42" width="10" height="10" rx="2" class="px-bright" /><rect x="14" y="42" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="42" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="42" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="0" y="56" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="56" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="0" y="70" width="10" height="10" rx="2" class="px-high" /><rect x="42" y="70" width="10" height="10" rx="2" class="px-high" />
+      <rect x="0" y="84" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="84" width="10" height="10" rx="2" class="px-bright" />
+    </g>
+    <!-- R -->
+    <g transform="translate(350,0)">
+      <rect x="0" y="0" width="10" height="10" rx="2" class="px-bright" /><rect x="14" y="0" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="0" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="0" y="14" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="14" width="10" height="10" rx="2" class="px-high" />
+      <rect x="0" y="28" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="28" width="10" height="10" rx="2" class="px-high" />
+      <rect x="0" y="42" width="10" height="10" rx="2" class="px-bright" /><rect x="14" y="42" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="42" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="0" y="56" width="10" height="10" rx="2" class="px-bright" /><rect x="14" y="56" width="10" height="10" rx="2" class="px-high" />
+      <rect x="0" y="70" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="70" width="10" height="10" rx="2" class="px-high" />
+      <rect x="0" y="84" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="84" width="10" height="10" rx="2" class="px-bright" />
+    </g>
+  </g>
+
+  <!-- =================================================================== -->
+  <!-- SCENE 2: TULISAN PIXEL BERJALAN "FULLSTACK"                         -->
+  <!-- =================================================================== -->
+  <g class="scene-fullstack" filter="url(#glow)">
+    <g transform="translate(0, 62)">
+      <!-- F -->
+      <g transform="translate(0,0)">
+        <rect x="0" y="0" width="10" height="10" rx="2" class="px-bright" /><rect x="14" y="0" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="0" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="0" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="0" y="14" width="10" height="10" rx="2" class="px-high" />
+        <rect x="0" y="28" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="0" y="42" width="10" height="10" rx="2" class="px-bright" /><rect x="14" y="42" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="42" width="10" height="10" rx="2" class="px-high" />
+        <rect x="0" y="56" width="10" height="10" rx="2" class="px-high" />
+        <rect x="0" y="70" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="0" y="84" width="10" height="10" rx="2" class="px-bright" />
+      </g>
+      <!-- U -->
+      <g transform="translate(70,0)">
+        <rect x="0" y="0" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="0" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="0" y="14" width="10" height="10" rx="2" class="px-high" /><rect x="42" y="14" width="10" height="10" rx="2" class="px-high" />
+        <rect x="0" y="28" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="28" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="0" y="42" width="10" height="10" rx="2" class="px-high" /><rect x="42" y="42" width="10" height="10" rx="2" class="px-high" />
+        <rect x="0" y="56" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="56" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="0" y="70" width="10" height="10" rx="2" class="px-high" /><rect x="42" y="70" width="10" height="10" rx="2" class="px-high" />
+        <rect x="14" y="84" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="84" width="10" height="10" rx="2" class="px-bright" />
+      </g>
+      <!-- L -->
+      <g transform="translate(140,0)">
+        <rect x="0" y="0" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="0" y="14" width="10" height="10" rx="2" class="px-high" />
+        <rect x="0" y="28" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="0" y="42" width="10" height="10" rx="2" class="px-high" />
+        <rect x="0" y="56" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="0" y="70" width="10" height="10" rx="2" class="px-high" />
+        <rect x="0" y="84" width="10" height="10" rx="2" class="px-bright" /><rect x="14" y="84" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="84" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="84" width="10" height="10" rx="2" class="px-bright" />
+      </g>
+      <!-- L -->
+      <g transform="translate(210,0)">
+        <rect x="0" y="0" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="0" y="14" width="10" height="10" rx="2" class="px-high" />
+        <rect x="0" y="28" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="0" y="42" width="10" height="10" rx="2" class="px-high" />
+        <rect x="0" y="56" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="0" y="70" width="10" height="10" rx="2" class="px-high" />
+        <rect x="0" y="84" width="10" height="10" rx="2" class="px-bright" /><rect x="14" y="84" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="84" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="84" width="10" height="10" rx="2" class="px-bright" />
+      </g>
+      <!-- S -->
+      <g transform="translate(280,0)">
+        <rect x="14" y="0" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="0" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="0" width="10" height="10" rx="2" class="px-high" />
+        <rect x="0" y="14" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="0" y="28" width="10" height="10" rx="2" class="px-high" />
+        <rect x="14" y="42" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="42" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="42" y="56" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="42" y="70" width="10" height="10" rx="2" class="px-high" />
+        <rect x="0" y="84" width="10" height="10" rx="2" class="px-high" /><rect x="14" y="84" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="84" width="10" height="10" rx="2" class="px-bright" />
+      </g>
+      <!-- T -->
+      <g transform="translate(350,0)">
+        <rect x="0" y="0" width="10" height="10" rx="2" class="px-bright" /><rect x="14" y="0" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="0" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="0" width="10" height="10" rx="2" class="px-bright" /><rect x="56" y="0" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="28" y="14" width="10" height="10" rx="2" class="px-high" />
+        <rect x="28" y="28" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="28" y="42" width="10" height="10" rx="2" class="px-high" />
+        <rect x="28" y="56" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="28" y="70" width="10" height="10" rx="2" class="px-high" />
+        <rect x="28" y="84" width="10" height="10" rx="2" class="px-bright" />
+      </g>
+      <!-- A -->
+      <g transform="translate(434,0)">
+        <rect x="14" y="0" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="0" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="0" y="14" width="10" height="10" rx="2" class="px-high" /><rect x="42" y="14" width="10" height="10" rx="2" class="px-high" />
+        <rect x="0" y="28" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="28" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="0" y="42" width="10" height="10" rx="2" class="px-bright" /><rect x="14" y="42" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="42" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="42" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="0" y="56" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="56" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="0" y="70" width="10" height="10" rx="2" class="px-high" /><rect x="42" y="70" width="10" height="10" rx="2" class="px-high" />
+        <rect x="0" y="84" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="84" width="10" height="10" rx="2" class="px-bright" />
+      </g>
+      <!-- C -->
+      <g transform="translate(504,0)">
+        <rect x="14" y="0" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="0" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="0" width="10" height="10" rx="2" class="px-high" />
+        <rect x="0" y="14" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="0" y="28" width="10" height="10" rx="2" class="px-high" />
+        <rect x="0" y="42" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="0" y="56" width="10" height="10" rx="2" class="px-high" />
+        <rect x="0" y="70" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="14" y="84" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="84" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="84" width="10" height="10" rx="2" class="px-high" />
+      </g>
+      <!-- K -->
+      <g transform="translate(574,0)">
+        <rect x="0" y="0" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="0" width="10" height="10" rx="2" class="px-high" />
+        <rect x="0" y="14" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="14" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="0" y="28" width="10" height="10" rx="2" class="px-bright" /><rect x="14" y="28" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="0" y="42" width="10" height="10" rx="2" class="px-bright" /><rect x="14" y="42" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="0" y="56" width="10" height="10" rx="2" class="px-bright" /><rect x="28" y="56" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="0" y="70" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="70" width="10" height="10" rx="2" class="px-high" />
+        <rect x="0" y="84" width="10" height="10" rx="2" class="px-bright" /><rect x="56" y="84" width="10" height="10" rx="2" class="px-med" />
+      </g>
+    </g>
+  </g>
+
+  <!-- =================================================================== -->
+  <!-- SCENE 3: ANIMASI 2 ANJING PIXEL BERLARI                             -->
+  <!-- =================================================================== -->
+  <g class="scene-dogs" filter="url(#glow)">
+    <!-- ANJING 1 (Belakang) -->
+    <g class="dog-1" transform="translate(0, 76)">
+      <!-- Telinga & Kepala -->
+      <rect x="70" y="0" width="10" height="10" rx="2" class="px-high" />
+      <rect x="84" y="0" width="10" height="10" rx="2" class="px-high" />
+      <rect x="70" y="14" width="10" height="10" rx="2" class="px-bright" /><rect x="84" y="14" width="10" height="10" rx="2" class="px-bright" /><rect x="98" y="14" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="70" y="28" width="10" height="10" rx="2" class="px-bright" /><rect x="84" y="28" width="10" height="10" rx="2" class="px-white" /><rect x="98" y="28" width="10" height="10" rx="2" class="px-bright" /><rect x="112" y="28" width="10" height="10" rx="2" class="px-bright" />
+      <!-- Ekor & Badan -->
+      <rect x="0" y="28" width="10" height="10" rx="2" class="px-med" />
+      <rect x="14" y="42" width="10" height="10" rx="2" class="px-high" /><rect x="28" y="42" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="42" width="10" height="10" rx="2" class="px-bright" /><rect x="56" y="42" width="10" height="10" rx="2" class="px-bright" /><rect x="70" y="42" width="10" height="10" rx="2" class="px-bright" /><rect x="84" y="42" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="28" y="56" width="10" height="10" rx="2" class="px-high" /><rect x="42" y="56" width="10" height="10" rx="2" class="px-high" /><rect x="56" y="56" width="10" height="10" rx="2" class="px-high" /><rect x="70" y="56" width="10" height="10" rx="2" class="px-high" />
+      <!-- Frame Kaki A (Terentang) -->
+      <g class="legs-a">
+        <rect x="14" y="70" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="84" y="70" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="0" y="84" width="10" height="10" rx="2" class="px-med" />
+        <rect x="98" y="84" width="10" height="10" rx="2" class="px-med" />
+      </g>
+      <!-- Frame Kaki B (Menekuk) -->
+      <g class="legs-b">
+        <rect x="28" y="70" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="70" y="70" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="42" y="84" width="10" height="10" rx="2" class="px-med" />
+        <rect x="56" y="84" width="10" height="10" rx="2" class="px-med" />
+      </g>
+    </g>
+
+    <!-- ANJING 2 (Depan) -->
+    <g class="dog-2" transform="translate(154, 76)">
+      <rect x="70" y="0" width="10" height="10" rx="2" class="px-high" />
+      <rect x="84" y="0" width="10" height="10" rx="2" class="px-high" />
+      <rect x="70" y="14" width="10" height="10" rx="2" class="px-bright" /><rect x="84" y="14" width="10" height="10" rx="2" class="px-bright" /><rect x="98" y="14" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="70" y="28" width="10" height="10" rx="2" class="px-bright" /><rect x="84" y="28" width="10" height="10" rx="2" class="px-white" /><rect x="98" y="28" width="10" height="10" rx="2" class="px-bright" /><rect x="112" y="28" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="0" y="28" width="10" height="10" rx="2" class="px-med" />
+      <rect x="14" y="42" width="10" height="10" rx="2" class="px-high" /><rect x="28" y="42" width="10" height="10" rx="2" class="px-bright" /><rect x="42" y="42" width="10" height="10" rx="2" class="px-bright" /><rect x="56" y="42" width="10" height="10" rx="2" class="px-bright" /><rect x="70" y="42" width="10" height="10" rx="2" class="px-bright" /><rect x="84" y="42" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="28" y="56" width="10" height="10" rx="2" class="px-high" /><rect x="42" y="56" width="10" height="10" rx="2" class="px-high" /><rect x="56" y="56" width="10" height="10" rx="2" class="px-high" /><rect x="70" y="56" width="10" height="10" rx="2" class="px-high" />
+      <g class="legs-b">
+        <rect x="14" y="70" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="84" y="70" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="0" y="84" width="10" height="10" rx="2" class="px-med" />
+        <rect x="98" y="84" width="10" height="10" rx="2" class="px-med" />
+      </g>
+      <g class="legs-a">
+        <rect x="28" y="70" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="70" y="70" width="10" height="10" rx="2" class="px-bright" />
+        <rect x="42" y="84" width="10" height="10" rx="2" class="px-med" />
+        <rect x="56" y="84" width="10" height="10" rx="2" class="px-med" />
+      </g>
+    </g>
+  </g>
+
+  <!-- =================================================================== -->
+  <!-- SCENE 4: SILUET TOPENG SPIDER-MAN PIXEL                             -->
+  <!-- =================================================================== -->
+  <g class="scene-spidey" filter="url(#glow)">
+    <!-- Benang Jaring Atas -->
+    <rect x="414" y="14" width="10" height="10" rx="2" class="px-low" />
+    <rect x="414" y="28" width="10" height="10" rx="2" class="px-med" />
+    
+    <!-- Kepala / Siluet Topeng Spider-Man -->
+    <g transform="translate(364, 42)">
+      <!-- Baris 1 (Atas Kepala) -->
+      <rect x="28" y="0" width="10" height="10" rx="2" class="px-high" />
+      <rect x="42" y="0" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="56" y="0" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="70" y="0" width="10" height="10" rx="2" class="px-high" />
+      <!-- Baris 2 (Dahi) -->
+      <rect x="14" y="14" width="10" height="10" rx="2" class="px-high" />
+      <rect x="28" y="14" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="42" y="14" width="10" height="10" rx="2" class="px-med" />
+      <rect x="56" y="14" width="10" height="10" rx="2" class="px-med" />
+      <rect x="70" y="14" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="84" y="14" width="10" height="10" rx="2" class="px-high" />
+      <!-- Baris 3 (Pelipis) -->
+      <rect x="0" y="28" width="10" height="10" rx="2" class="px-high" />
+      <rect x="14" y="28" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="28" y="28" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="42" y="28" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="56" y="28" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="70" y="28" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="84" y="28" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="98" y="28" width="10" height="10" rx="2" class="px-high" />
+      <!-- Baris 4 & 5 (Area Mata Kosong untuk Lensa Putih) -->
+      <rect x="0" y="42" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="42" y="42" width="10" height="10" rx="2" class="px-med" />
+      <rect x="56" y="42" width="10" height="10" rx="2" class="px-med" />
+      <rect x="98" y="42" width="10" height="10" rx="2" class="px-bright" />
+
+      <rect x="0" y="56" width="10" height="10" rx="2" class="px-high" />
+      <rect x="42" y="56" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="56" y="56" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="98" y="56" width="10" height="10" rx="2" class="px-high" />
+      <!-- Baris 6 (Pipi) -->
+      <rect x="14" y="70" width="10" height="10" rx="2" class="px-high" />
+      <rect x="28" y="70" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="42" y="70" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="56" y="70" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="70" y="70" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="84" y="70" width="10" height="10" rx="2" class="px-high" />
+      <!-- Baris 7 (Rahang) -->
+      <rect x="14" y="84" width="10" height="10" rx="2" class="px-med" />
+      <rect x="28" y="84" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="42" y="84" width="10" height="10" rx="2" class="px-med" />
+      <rect x="56" y="84" width="10" height="10" rx="2" class="px-med" />
+      <rect x="70" y="84" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="84" y="84" width="10" height="10" rx="2" class="px-med" />
+      <!-- Baris 8 (Dagu) -->
+      <rect x="28" y="98" width="10" height="10" rx="2" class="px-high" />
+      <rect x="42" y="98" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="56" y="98" width="10" height="10" rx="2" class="px-bright" />
+      <rect x="70" y="98" width="10" height="10" rx="2" class="px-high" />
+      <!-- Baris 9 (Ujung Dagu) -->
+      <rect x="42" y="112" width="10" height="10" rx="2" class="px-high" />
+      <rect x="56" y="112" width="10" height="10" rx="2" class="px-high" />
+    </g>
+
+    <!-- Lensa Mata Spider-Man (Berkedip / Menyipit) -->
+    <g class="spidey-eyes" transform="translate(364, 42)">
+      <!-- Mata Kiri -->
+      <rect x="14" y="42" width="10" height="10" rx="2" class="px-white" />
+      <rect x="14" y="56" width="10" height="10" rx="2" class="px-white" />
+      <rect x="28" y="56" width="10" height="10" rx="2" class="px-white" />
+      <!-- Mata Kanan -->
+      <rect x="84" y="42" width="10" height="10" rx="2" class="px-white" />
+      <rect x="70" y="56" width="10" height="10" rx="2" class="px-white" />
+      <rect x="84" y="56" width="10" height="10" rx="2" class="px-white" />
+    </g>
+  </g>
+</svg>
